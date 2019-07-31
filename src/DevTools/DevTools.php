@@ -68,10 +68,8 @@ class DevTools extends PluginBase{
 		@mkdir($this->getDataFolder());
 
 		$this->getServer()->getPluginManager()->registerInterface(new FolderPluginLoader($this->getServer()->getLoader()));
-		$this->getServer()->getPluginManager()->loadPlugins($this->getServer()->getPluginPath(), [FolderPluginLoader::class]);
+		$this->getServer()->getPluginManager()->loadPlugins($this->getServer()->getPluginPath());
 		$this->getLogger()->info("Registered folder plugin loader");
-		$this->getServer()->enablePlugins(PluginLoadOrder::STARTUP());
-
 	}
 
 	public function onCommand(CommandSender $sender, Command $command, string $label, array $args) : bool{
